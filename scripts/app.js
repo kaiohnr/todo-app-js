@@ -88,7 +88,6 @@ const generateTodoMarkup = function (text) {
   localStorage.setItem('restingTodos', restingTodos.textContent);
   dragElements();
   localStorage.setItem('todos', todosListEl.innerHTML);
-  const deleteIcon = document.querySelectorAll('.delete-icon');
   removeTodo();
 };
 
@@ -212,6 +211,7 @@ const saveTodos = function () {
     restingTodos.textContent = savedRestingTodos;
   }
   dragElements();
+  removeTodo();
 };
 saveTodos();
 
