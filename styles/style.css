@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+:root {
+  --bg-image: url('../images/bg-mobile-light.jpg');
+  --bg-color: #f7f5f5;
+  --very-light: #ffffff;
+  --dark-grayish-blue: #9394a5;
+  --light-grayish-blue: #d2d3db;
+  --very-dark-grayish-blue: rgb(72, 75, 106);
+  --add-icon: hsl(234deg 34% 66%);
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --bg-image: url('../images/bg-desktop-light.jpg');
+  }
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: var(--bg-color);
+  transition: all 0.2s ease-in-out;
+}
+
+body.dark {
+  --bg-image: url('../images/bg-mobile-dark.jpg');
+  --bg-color: #121224;
+  --very-light: #24273b;
+  --very-dark-grayish-blue: #dadbe2;
+  --dark-grayish-blue: #9394a5;
+  --light-grayish-blue: rgb(60, 64, 90);
+  --add-icon: #bdbec7;
+}
+
+@media screen and (min-width: 1024px) {
+  body.dark {
+    --bg-image: url('../images/bg-desktop-dark.jpg');
+  }
+}
+
+/* ============================ Background image ============================*/
+
+.bg-image {
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  z-index: -1;
+}
+
+/* ============================ Header styles ============================*/
+
+header {
+  width: 100%;
+}
+
+.header__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3.2rem 1.8rem;
+  max-width: 770px;
+}
+
+@media screen and (min-width: 770px) {
+  .header__container {
+    margin: 0 auto;
+  }
+}
+
+.header__title {
+  color: #ffffff;
+}
+
+.header__title h1 {
+  letter-spacing: 6px;
+  font-weight: 700;
+}
+
+.theme-btn {
+  color: var(--very-light);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.theme-btn:active {
+  transform: scale(0.8);
+}
+
+.create-todo__container {
+  width: 100%;
+  padding: 0rem 2rem;
+}
+
+.create-card {
+  padding: 0.3rem 1rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--very-light);
+  border-radius: 5px;
+  max-width: 710px;
+}
+
+@media screen and (min-width: 770px) {
+  .create-card {
+    margin: 0 auto;
+  }
+}
+
+.add-todo-icon {
+  border: 1px solid var(--dark-grayish-blue);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.add-todo-icon:active {
+  transform: scale(0.8);
+}
+
+.add-icon {
+  font-size: 0.6rem;
+  color: var(--add-icon);
+  margin-top: 0.1rem;
+}
+
+.write-todo {
+  border: none;
+  outline: none;
+  padding: 1rem;
+  padding-left: 1rem;
+  color: var(--dark-grayish-blue);
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+.write-todo::placeholder {
+  color: var(--dark-grayish-blue);
+}
+
+/* ============================ Created Todos ============================*/
+
+.created-todos__container {
+  margin-top: 2rem;
+}
+
+.todos {
+  padding: 0rem 1.8rem;
+}
+
+.todo__item {
+  cursor: grab;
+  box-shadow: 0px 0px 0px -3px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--light-grayish-blue);
+  background-color: var(--very-light);
+  max-width: 710px;
+}
+
+@media screen and (min-width: 770px) {
+  .todo__item {
+    margin: 0 auto;
+  }
+}
+
+.todo__list .todo__item:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.to-do {
+  padding: 0.3rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.check-todo {
+  border: 1px solid var(--dark-grayish-blue);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  cursor: pointer;
+  background: none;
+}
+
+.check-todo:active {
+  transform: scale(0.6);
+}
+
+.todo-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 95%;
+}
+
+.todo-description {
+  font-size: 1rem;
+  color: var(--very-dark-grayish-blue);
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  padding-left: 1rem;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: transparent;
+}
+
+.text-line {
+  color: var(--dark-grayish-blue);
+  text-decoration: line-through;
+}
+
+.delete-icon {
+  color: #9394a5;
+  opacity: 0.5;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.delete-icon:hover {
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+.check {
+  display: none;
+  margin-left: 0.05rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.checked-todo {
+  background: linear-gradient(
+    130deg,
+    rgba(114, 191, 251, 1) 0%,
+    rgba(159, 85, 255, 1) 100%
+  );
+}
+
+.checked-todo img {
+  display: block;
+}
+
+/* ============================ Manage Todos ============================*/
+
+.manage-todos {
+  width: 100%;
+  padding: 0rem 1.8rem;
+}
+
+.manage-todos__container {
+  box-shadow: 0px 22px 16px -25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  background-color: var(--very-light);
+  justify-content: space-between;
+  padding: 1.2rem 1rem;
+  max-width: 710px;
+}
+
+@media screen and (min-width: 770px) {
+  .manage-todos__container {
+    margin: 0 auto;
+  }
+}
+
+.todos-number p {
+  color: var(--dark-grayish-blue);
+  font-size: 0.9rem;
+}
+.delete-complete-todos p {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  color: var(--dark-grayish-blue);
+  font-size: 0.9rem;
+}
+
+.delete-complete-todos p:hover {
+  color: var(--very-dark-grayish-blue);
+}
+
+/* ============================ Displays Todos ============================*/
+
+.displays-todos {
+  width: 100%;
+  padding: 0rem 1.8rem;
+  margin-top: 4rem;
+}
+.displays-todos__container {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--very-light);
+  padding: 1.2rem 1.8rem;
+  box-shadow: 0px 0px 20px -3px rgb(0 0 0 / 8%);
+  max-width: 710px;
+}
+
+@media screen and (min-width: 770px) {
+  .displays-todos__container {
+    margin: 0 auto;
+  }
+}
+
+.displays-todos__container p {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--dark-grayish-blue);
+  transition: all 0.2s ease-in-out;
+}
+
+.display-active {
+  color: #467df2 !important ;
+}
+
+.displays-todos__container p:hover {
+  color: #467df2;
+}
+
+/* ============================ DIsplays Todos ============================*/
+.drag-items {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.drag-items p {
+  color: var(--dark-grayish-blue);
+}
+
+.draggeble.dragging {
+  opacity: 0.5;
+}

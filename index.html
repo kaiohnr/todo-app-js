@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="icon" href="./images/favicon-32x32.png" />
+    <script src="./scripts/themes.js" defer></script>
+    <script src="./scripts/app.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/a706274c7c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="bg-image"></div>
+
+    <header>
+      <div class="header__container">
+        <div class="header__title">
+          <h1>TODO</h1>
+        </div>
+
+        <div class="header__icon-theme">
+          <img src="./images/icon-moon.svg" class="theme-btn" alt="" />
+        </div>
+      </div>
+
+      <div class="create-todo__container">
+        <div class="create-card">
+          <div class="add-btn">
+            <span class="add-todo-icon">
+              <i class="fa-solid fa-plus add-icon"></i>
+            </span>
+          </div>
+
+          <div class="create-todo">
+            <input
+              class="write-todo"
+              type="text"
+              placeholder="Create a new todo..."
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="created-todos__container">
+      <div class="todos">
+        <ul class="todo__list"></ul>
+      </div>
+    </div>
+
+    <div class="manage-todos">
+      <div class="manage-todos__container">
+        <div class="todos-number">
+          <p><span class="resting-todos">0</span> items left</p>
+        </div>
+
+        <div class="delete-complete-todos">
+          <p>Clear Completed</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="displays-todos">
+      <div class="displays-todos__container">
+        <p class="display-active" id="show-all-todos">All</p>
+        <p id="show-active-todos">Active</p>
+        <p id="show-completed-todos">Completed</p>
+      </div>
+    </div>
+
+    <div class="drag-items">
+      <p>Drag and drop to reorder list</p>
+    </div>
+  </body>
+</html>
