@@ -211,6 +211,7 @@ const saveTodos = function () {
     removeTodo();
     restingTodos.textContent = savedRestingTodos;
   }
+  dragElements();
 };
 saveTodos();
 
